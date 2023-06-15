@@ -1,0 +1,41 @@
+<html>
+<head>
+	<style></style>	
+    <title>Dibujo</title>
+    <script type="text/javascript" src="JS/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="JS/spectrum.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/spectrum.css">
+    <link rel="stylesheet" href="CSS/materialize.min.css">
+    <script src="JS/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/DibuCSS.css">
+    <script src="JS/html2canvas.min.js"></script>
+</head>
+<body>
+    <a class="logo">eStudy</a>
+    <a href="/Menu.html" style="padding-left: 80%; color: white;"><i class="material-icons tiny">arrow_back</i>Volver al menu</a>
+    <div class="container flow-text">
+        <h1 style="text-align:center; color: white;">Dibujador</h1>
+    </div>
+    <div class="row">
+        <div class="col s9">
+            <canvas id="canvas" width="1350" height="725" style="border:1px solid #000000; background-color: white;"></canvas>
+        </div>
+        
+        <div class="col s3">
+            <input id="picker" value='#276cb8'/>
+            <h4 class="waves-effect waves-light btn toggle" style="font-size: xx-large;">Elegir color</h4>
+            <br>
+            <h4 class="waves-effect waves-light btn chiq" style="font-size: xx-large;">Pequeño</h4>
+            <br>
+            <h4 class="waves-effect waves-light btn med" style="font-size: xx-large;">Mediano</h4>
+            <br>
+            <h4 class="waves-effect waves-light btn grand" style="font-size: xx-large;">Grande</h4>
+            <br>
+            <h4 class="waves-effect waves-light btn gom" style="font-size: xx-large;">Goma</h4>
+            </div>
+    </div>
+
+    <script type="text/javascript" src="JS/DibuJS.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eStudy Editor de Codigo</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js'></script>
+    <script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Js/Editor.js" type="text/javascript"></script>
+    <script src="Js/materialize.min.js"></script>
+    <link rel="stylesheet" href="Css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        html,body { margin:0; padding:0; height:100%; width:100%; overflow: hidden;}
+
+        .h1v{
+            background-color: black;
+            font-family: Century;
+            font-size: 35px;
+        }
+        .logo{
+            width: 20%;
+            height: auto;
+        }
+        #editor {
+            height: 100%;
+            width:100%;
+            display:inline-block;
+        }
+
+        #container {
+            height:100%;
+            width:auto;
+            white-space : nowrap; 
+            overflow : hidden;
+            position:relative;
+        }
+        .ace_editor .ace_marker-layer .ace_bracket { display: none }
+    </style>
+</head>
+<body onload="ready()">
+    <nav style="background-color:black;">
+        <div class="nav-wraper">
+            <img src="Imagenes/eStudy.png.jpeg" alt="Logo" class="logo">
+            <a href="/Menu.html">
+                <img src="Imagenes/Menu.png.jpeg" alt="Volver al menu" style="position: relative; left: 1350; top: -50;">
+            </a>
+            <br>
+        </div>
+    </nav>
+    <nav style="background-color: black;">
+        <h1 class="container flow-text h1v" style="text-align:center; color: white;">eCoder</h1>
+    </nav>
+    
+    
+    <div id="container">
+
+        <div id="editor">
+        </div>
+
+    </div>
+    <script>
+        function update()
+        {
+            var idoc = document.getElementById('iframe').contentWindow.document;
+
+            idoc.open();
+            idoc.write(editor.getValue());
+            idoc.close();
+        }
+
+        function setupEditor()
+        {
+                window.editor = ace.edit("editor");
+            editor.setTheme("ace/theme/monokai");
+            editor.getSession().setMode("ace/mode/html");
+            editor.setValue(); 
+
+        editor.getSession().on('change', function() {
+            update();
+        });
+
+        editor.focus();
+        
+        
+        editor.setOptions({
+            fontSize: "12pt",
+            showGutter: false,
+            showLineNumbers: true,
+            vScrollBarAlwaysVisible:true,
+            enableBasicAutocompletion: false, enableLiveAutocompletion: false
+        });
+
+            editor.setShowPrintMargin(false);
+            editor.setBehavioursEnabled(false);
+        }
+
+        setupEditor();
+        update();
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,28 @@
+body{
+    background-color: black;
+}
+.logo{
+    width: 20%;
+    height: auto;
+}
+.titulo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    height: auto;
+}
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+.traducir{
+    width: 20%;
+    height: auto;
+}
+.centrar{
+    display: block;
+    margin-left: auto;
+     margin-right: auto;
+}
